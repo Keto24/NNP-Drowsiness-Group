@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowsiness Detection System - Group Submission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1a1a1a;
+            color: white;
+        }
+        h1, h2 {
+            color: #ffcc00;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Drowsiness Detection System</h1>
+        <p><strong>Group Members:</strong></p>
+        <ul style="list-style: none; text-align: center; padding: 0;">
+            <li>Emma Gandonou</li>
+            <li>Keto Etefa Gemechu</li>
+            <li>Yelnur Abdushev</li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Project Outline Section -->
+        <section>
+            <h2>Introduction Outline</h2>
+            <p><strong>1. Introduction:</strong> The increasing number of accidents caused by drowsy driving poses a major risk to road safety.</p>
+            <p><strong>2. Background:</strong> Existing solutions, such as lane detection and steering monitoring, often fail to detect early signs of drowsiness.</p>
+            <p><strong>3. Transition:</strong> Our approach leverages computer vision and neural networks to analyze real-time facial data for more accurate drowsiness detection.</p>
+            <p><strong>4. Details:</strong> The project involves facial feature extraction using OpenCV, real-time classification using neural networks, and an alert system.</p>
+            <p><strong>5. Assessment:</strong> Success will be measured by achieving an 85%+ accuracy rate, minimizing false positives, and ensuring real-time performance.</p>
+        </section>
+
+        <!-- Ethical Sweep Section -->
+        <section>
+            <h2>Ethical Sweep</h2>
+            <p><strong>General Questions:</strong></p>
+            <ul>
+                <li><strong>Should we even be doing this?</strong> Yes, as drowsiness detection improves road safety and prevents accidents.</li>
+                <li><strong>What might be the accuracy of a non-ML alternative?</strong> Traditional methods, like motion sensors or steering detection, have lower accuracy and do not consider facial fatigue indicators.</li>
+                <li><strong>What processes will we use to handle appeals/mistakes?</strong> The system should allow users to disable or calibrate sensitivity to reduce unnecessary alerts.</li>
+                <li><strong>How diverse is our team?</strong> Our team consists of members from different backgrounds, which helps reduce bias and improve inclusivity.</li>
+            </ul>
+
+            <p><strong>Data Questions:</strong></p>
+            <ul>
+                <li><strong>Is our data valid for its intended use?</strong> We will use publicly available datasets and conduct additional validation.</li>
+                <li><strong>What bias could be in our data?</strong> Bias may exist in skin tone detection, facial structure variation, and lighting conditions.</li>
+                <li><strong>How could we minimize bias in our data and model?</strong> We will include diverse datasets with a range of ethnicities, lighting conditions, and face shapes.</li>
+                <li><strong>How should we audit our code and data?</strong> Regular testing and comparison with existing models to check for fairness.</li>
+            </ul>
+
+            <p><strong>Impact Questions:</strong></p>
+            <ul>
+                <li><strong>Do we expect different error rates for different sub-groups?</strong> Yes, and we will evaluate performance across different demographics.</li>
+                <li><strong>What are likely misinterpretations of results?</strong> Users might rely too heavily on the system, thinking it is 100% accurate.</li>
+                <li><strong>How might we impinge on individuals’ privacy?</strong> The system processes facial data, so encryption and local storage are necessary to protect privacy.</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 | Neural Networks Course Project | Created by Emma Gandonou, Keto Etefa Gemechu, Yelnur Abdushev</p>
+    </footer>
+</body>
+</html>
+
