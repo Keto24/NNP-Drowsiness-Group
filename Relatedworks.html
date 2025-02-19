@@ -70,8 +70,8 @@
             <p class="work-title">1. Drowsiness Detection in Real-Time via CNNs and Transfer Learning</p>
             <div class="work-content" id="work1">
                 <p><strong>Authors:</strong> Salem, D., & Waleed, M. (2024)</p>
-                <p><strong>Summary:</strong> This study achieved 90–99.86% accuracy using CNNs and Transfer Learning, integrating MobileNetV2 and InceptionV3 for classification.</p>
-                <p><strong>How Our Project Differs:</strong> We use OpenCV-based feature extraction instead of relying purely on transfer learning. We also implement real-time alerts via SMS/buzzers.</p>
+                <p><strong>Summary:</strong> This research explores real-time drowsiness detection using convolutional neural networks (CNNs) and transfer learning, achieving 90–99.86% accuracy across multiple datasets. It integrates pre-trained models like MobileNetV2 and InceptionV3 for classification, using Haar Cascade for feature extraction. The system includes a mobile application for real-world driver monitoring, emphasizing the importance of dataset diversity, bias mitigation, and real-time performance for accurate and reliable detection.</p>
+                <p><strong> 🔹How Our Project Differs:</strong>  Unlike this study, which primarily relies on transfer learning with pre-trained CNN models, our project will focus on OpenCV-based facial feature extraction combined with a neural network model (CNN, ANN, or LSTM). Additionally, our system will provide real-time alerts (via sound or SMS notifications), whereas many existing studies focus only on detection without direct intervention. Our project also aims to test robustness under varied lighting conditions and facial structures to improve generalization.</p>
                 <p><a href="https://jeas.springeropen.com/articles/10.1186/s44147-024-00457-z" target="_blank">Read Here</a></p>
             </div>
         </div>
@@ -80,8 +80,8 @@
         <div class="work" onclick="toggleContent('work2')">
             <p class="work-title">2. Automatic Driver Drowsiness Detection Using ANN</p>
             <div class="work-content" id="work2">
-                <p><strong>Summary:</strong> This study uses ANN and EEG signals, achieving 72.25% sensitivity but requiring preset camera positions.</p>
-                <p><strong>How Our Project Differs:</strong> We exclude EEG and focus on real-time facial analysis with higher expected accuracy.</p>
+                <p><strong>Summary:</strong> This study presents an ANN-based drowsiness detection system using visual facial descriptors such as eye aspect ratio (EAR), mouth aspect ratio (MAR), face length (FL), and face width balance (FWB). Additionally, the system integrates EEG-based microsleep detection for improved classification. The ANN model achieved 72.25% sensitivity and 60.40% accuracy when combined with Discrete Fourier Transform (DFT) for feature extraction. However, the system's practicality is limited as it requires preset camera positions and is ineffective for users wearing sunglasses.</p>
+                <p><strong>🔹How Our Project Differs:</strong> Unlike this study, our project will not rely on EEG signals and instead focus solely on real-time facial feature extraction using OpenCV and deep learning models. Furthermore, this study reports only moderate accuracy (60–72%), whereas we aim for 85%+ accuracy by exploring CNNs or LSTMs for better classification performance. Additionally, our system will feature real-time alerts (buzzer, SMS notifications via Twilio), making it more practical for real-world deployment.</p>
                 <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9482962/" target="_blank">Read Here</a></p>
             </div>
         </div>
@@ -90,8 +90,11 @@
         <div class="work" onclick="toggleContent('work3')">
             <p class="work-title">3. Recent Developments in Driver Drowsiness Detection (Review)</p>
             <div class="work-content" id="work3">
-                <p><strong>Summary:</strong> A review categorizing detection methods into physiological, behavioral, and vehicle-based approaches.</p>
-                <p><strong>How Our Project Differs:</strong> We focus solely on facial-based behavioral detection and real-world deployment.</p>
+                <p><strong>Summary:</strong> This review paper categorizes drowsiness detection methods into three major approaches:Physiological methods (EEG, ECG, and biometric signals).
+Behavioral methods (facial expressions, eye closure, and head movements).
+Vehicle-based methods (steering patterns, lane deviation, and braking behavior).
+The paper highlights key challenges in real-time detection, such as sensor reliability, environmental conditions, and dataset biases, while also discussing how machine learning models improve detection precision across different driving conditions.</p>
+                <p><strong>🔹How Our Project Differs:</strong> This review provides valuable context on why a hybrid approach (combining physiological, behavioral, and vehicle-based signals) improves detection accuracy. While our system does not integrate physiological data, we aim to enhance facial analysis accuracy by refining EAR, MAR, FL, and FWB measurements combined with CNN-based classification. Additionally, unlike purely research-based models, our project focuses on real-world deployment with live alerts and emergency notifications.</p>
                 <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8914892/" target="_blank">Read Here</a></p>
             </div>
         </div>
@@ -100,8 +103,8 @@
         <div class="work" onclick="toggleContent('work4')">
             <p class="work-title">4. Drowsiness AI – Commercial Application</p>
             <div class="work-content" id="work4">
-                <p><strong>Summary:</strong> A proprietary AI-based drowsiness detection system for trucking industries.</p>
-                <p><strong>How Our Project Differs:</strong> Our software solution is open-source and deployable across multiple devices.</p>
+                <p><strong>Summary:</strong> This article describes a commercially available AI-powered drowsiness detection system that monitors drivers using a built-in camera. The system detects yawning and eye closure, triggering audible alerts instructing the driver to pull over. The blog post includes a demonstration video showcasing the technology in real-world trucking applications.</p>
+                <p><strong>🔹How Our Project Differs:</strong> Unlike this commercially available solution, our project is not hardware-based but instead software-driven, allowing flexibility in deployment across different devices (webcams, security cameras, or dash cams). Additionally, our model will be open-source and adaptable, whereas commercial solutions are proprietary and inaccessible for modification</p>
                 <p><a href="https://gomotive.com/blog/drowsy-driver-detection/" target="_blank">Read Here</a></p>
             </div>
         </div>
@@ -110,8 +113,8 @@
         <div class="work" onclick="toggleContent('work5')">
             <p class="work-title">5. Bosch Mobility – Steering-Based Drowsiness Detection</p>
             <div class="work-content" id="work5">
-                <p><strong>Summary:</strong> Detects drowsiness using steering patterns rather than facial recognition.</p>
-                <p><strong>How Our Project Differs:</strong> Steering-based models react too late, while our system identifies early fatigue signs.</p>
+                <p><strong>Summary:</strong> Bosch Mobility’s system utilizes a steering angle sensor to analyze steering movements and velocity. The model detects irregular steering behavior and advises drivers to take a break when drowsiness is suspected.</p>
+                <p><strong>🔹How Our Project Differs:</strong>  While Bosch’s system is vehicle-based, our project focuses on real-time facial detection. Steering-based systems fail to detect early-stage drowsiness, whereas facial analysis identifies fatigue signs before erratic driving occurs. Additionally, our system does not require specialized vehicle hardware, making it more accessible and adaptable.</p>
                 <p><a href="https://www.bosch-mobility.com/en/solutions/assistance-systems/driver-drowsiness-detection/" target="_blank">Read Here</a></p>
             </div>
         </div>
@@ -120,20 +123,26 @@
         <div class="work" onclick="toggleContent('work6')">
             <p class="work-title">6. Research Paper: Driver Drowsiness Detection Using Facial Expression Analysis</p>
             <div class="work-content" id="work6">
-                <p><strong>Summary:</strong> Uses eye aspect ratio and mouth opening ratios for drowsiness classification.</p>
-                <p><strong>How Our Project Differs:</strong> Our model does not rely on predefined threshold values, increasing adaptability.</p>
+                <p><strong>Summary:</strong> This study records driver facial expressions using a webcam and extracts eye aspect ratio, mouth opening ratio, and nose length ratio. The system compares real-time values to pre-set threshold values to detect drowsiness levels.</p>
+                <p><strong>🔹How Our Project Differs:</strong>  Our system will not use predefined threshold values but instead train a neural network model for improved adaptability and accuracy across different individuals. Additionally, we will integrate alert mechanisms, whereas this study mainly focuses on detection without real-time interventions.</p>
                 <p><a href="https://iopscience.iop.org/article/10.1088/1742-6596/2325/1/012057/pdf" target="_blank">Read Here</a></p>
             </div>
         </div>
 
         <!-- Conclusion -->
-        <section>
-            <h2>Conclusion: State-of-the-Art in Drowsiness Detection</h2>
-            <p>
-                Most academic research focuses on CNNs for facial feature detection, while commercial solutions rely on proprietary AI-driven hardware.
-                Our project uniquely integrates OpenCV-based feature extraction with real-time alerts, bridging the gap between research accuracy and practical deployment.
-            </p>
-        </section>
+        <!-- Conclusion -->
+<section>
+    <h2>Conclusion: Take aways from Related works </h2>
+    <p>From reviewing recent research and commercial solutions, we observe that:</p>
+    <ul>
+        <li>Most academic models focus on facial features (EAR, MAR) but lack real-world deployment.</li>
+        <li>Commercial solutions rely on hardware-based monitoring (cameras, steering sensors).</li>
+        <li>Hybrid methods (combining physiological and behavioral features) enhance detection but face implementation challenges.</li>
+        <li>Our project differentiates itself by prioritizing real-time alerts, scalability, and adaptability across diverse environments.</li>
+        <li>By integrating CNN-based classification, OpenCV-based feature extraction, and alert mechanisms (SMS/Twilio, buzzers), our project aims to develop a deployable, cost-effective, and high-accuracy drowsiness detection system that improves road safety beyond existing solutions.</li>
+    </ul>
+</section>
+
 
     </div>
 
