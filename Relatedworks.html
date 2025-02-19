@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Related Works - Drowsiness Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Related Works - Drowsiness Detection System</h1>
+        <p><strong>Group Members:</strong></p>
+        <ul style="list-style: none; text-align: center; padding: 0;">
+            <li>Emma Gandonou</li>
+            <li>Keto Etefa Gemechu</li>
+            <li>Yelnur Abdushev</li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <!-- Project Overview -->
+        <section>
+            <h2>Project Check-In</h2>
+            <p>Last week, we developed a **real-time drowsiness detection system outline** focusing on **computer vision and neural networks**. Our goal was to create an alert system with **85%+ accuracy** and **real-world deployment feasibility**.</p>
+            <p>This week, we are conducting a **related works search** to explore existing research and commercial solutions. This will help us **refine our approach** and **understand the state-of-the-art** in the field.</p>
+        </section>
+
+        <!-- Related Works Section -->
+        <section>
+            <h2>Related Works</h2>
+
+            <!-- Related Work 1 -->
+            <div class="related-work">
+                <h3 onclick="toggleDetails('work1')">Drowsiness Detection using CNN (Salem & Waleed, 2024)</h3>
+                <div id="work1" class="details">
+                    <p><strong>Summary:</strong> This research achieves **90-99.86% accuracy** using **CNNs and transfer learning** with MobileNetV2 and InceptionV3. It integrates **Haar Cascade for feature extraction** and a **mobile app for real-time detection**.</p>
+                    <p><strong>Difference from Our Project:</strong> Unlike this model, our system will combine **OpenCV-based facial extraction** with **real-time alerts (buzzer/SMS)**.</p>
+                    <p><a href="https://jeas.springeropen.com/articles/10.1186/s44147-024-00457-z" target="_blank">Read here</a></p>
+                </div>
+            </div>
+
+            <!-- Related Work 2 -->
+            <div class="related-work">
+                <h3 onclick="toggleDetails('work2')">Drowsiness Detection using ANN (Dov Press)</h3>
+                <div id="work2" class="details">
+                    <p><strong>Summary:</strong> This study uses **ANNs with facial descriptors (EAR, MAR, FL, FWB)** and **EEG signals** to detect drowsiness, achieving **60-72% accuracy**.</p>
+                    <p><strong>Difference from Our Project:</strong> We **do not use EEG signals** and aim for **higher accuracy (85%+)** using **CNNs/LSTMs**.</p>
+                    <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9482962/" target="_blank">Read here</a></p>
+                </div>
+            </div>
+
+            <!-- Related Work 3 -->
+            <div class="related-work">
+                <h3 onclick="toggleDetails('work3')">Recent Developments in Drowsiness Detection (Review)</h3>
+                <div id="work3" class="details">
+                    <p><strong>Summary:</strong> A comprehensive **review of physiological, behavioral, and vehicle-based methods** for drowsiness detection, highlighting **dataset biases and real-time challenges**.</p>
+                    <p><strong>Difference from Our Project:</strong> We will focus on **behavioral methods (facial features)** with **real-time notifications**.</p>
+                    <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8914892/" target="_blank">Read here</a></p>
+                </div>
+            </div>
+
+            <!-- Related Work 4 -->
+            <div class="related-work">
+                <h3 onclick="toggleDetails('work4')">Drowsiness AI - Commercial Product</h3>
+                <div id="work4" class="details">
+                    <p><strong>Summary:</strong> AI-powered **commercial driver monitoring system** that detects yawning, eye closure, and plays **audible alerts**.</p>
+                    <p><strong>Difference from Our Project:</strong> Unlike **proprietary solutions**, our model is **open-source and adaptable**.</p>
+                    <p><a href="https://gomotive.com/blog/drowsy-driver-detection/" target="_blank">Read here</a></p>
+                </div>
+            </div>
+
+            <!-- Related Work 5 -->
+            <div class="related-work">
+                <h3 onclick="toggleDetails('work5')">Bosch Steering-Based Drowsiness Detection</h3>
+                <div id="work5" class="details">
+                    <p><strong>Summary:</strong> Uses **steering angle sensors** to detect **irregular driving patterns**.</p>
+                    <p><strong>Difference from Our Project:</strong> Our system **analyzes facial features** rather than **steering behavior**.</p>
+                    <p><a href="https://www.bosch-mobility.com/en/solutions/assistance-systems/driver-drowsiness-detection/" target="_blank">Read here</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 | Neural Networks Course Project | Created by Emma Gandonou, Keto Etefa Gemechu, Yelnur Abdushev</p>
+    </footer>
+
+    <!-- Footnote -->
+    <section class="footnote">
+        <p><em>ChatGPT-4O was used to customize HTML code, revise grammar, and straighten out awkward phrasing in this project outline.</em></p>
+    </section>
+
+</body>
+</html>
