@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Milestone 5: Outline and Early Draft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1a1a1a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3 {
+            color: #ffcc00;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Project Milestone 5: Outline and Early Draft</h1>
+        <p><strong>By Yelnur Abdushev, Emma Gandonou, Keto</strong></p>
+        
+        <h2>Outline and Related Works</h2>
+        <h3>Title:</h3>
+        <p>Driver Drowsiness Detection</p>
+        
+        <h3>Introduction:</h3>
+        <p>This project tackles an essential issue in today’s society, and that is drowsy driving. Some studies have shown that driving with sleep deprivation is similar to driving while intoxicated. This issue doesn’t only affect drivers but also their passengers and everyone else on the road. Thus this project will focus on training a neural network capable of detecting drowsiness in drivers.</p>
+        
+        <h3>Method:</h3>
+        <p>We utilized OpenCV, TensorFlow, and Twilio API. The datasets the neural network will be trained on include OC oC Drowsiness - Detection, MRL Eye Data Set, and Driver Drowsiness Dataset. These diverse data inputs will reduce bias and increase accuracy.</p>
+        
+        <h3>Discussion:</h3>
+        <p>Here we will talk about the results of our neural network.</p>
+        
+        <h3>Ethical Sweep:</h3>
+        <p>Some ethical considerations include the use of a camera, privacy concerns, and demographic fairness.</p>
+        
+        <h3>Conclusion:</h3>
+        <p>Our drowsiness detection system will be highly beneficial to the world community and will save thousands of lives on the road.</p>
+        
+        <h3>Related Works:</h3>
+        <p>Existing drowsiness detection systems have been created using CNN or ANN. Various studies explore real-time detection using deep learning and transfer learning.</p>
+        
+        <h3>References:</h3>
+        <p>Salem, D., Waleed, M. (2024). "Drowsiness detection in real-time via CNNs and transfer learning." <a href="https://doi.org/10.1186/s44147-024-00457-z" target="_blank" style="color:#ffcc00;">Read here</a>.</p>
+        
+    </div>
+    <footer>
+        <p>&copy; 2025 | Neural Networks Course Project | Created by Yelnur Abdushev, Emma Gandonou, Keto</p>
+    </footer>
+</body>
+</html>
