@@ -1,50 +1,35 @@
 /* General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #1a1a1a;
-    color: white;
+    background: #f9f9f9; /* Light background for better readability */
+    color: #222; /* Dark gray text for better contrast */
     margin: 0;
     padding: 0;
 }
 
-/* Heading Styles */
-h1, h2 {
-    color: #ffcc00;
+h1, h2, h3 {
+    color: #004080; /* Dark blue headings for clarity */
     text-align: center;
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-/* Container */
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    background: #ffffff; /* White background inside the container */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Lists */
 ul {
     list-style-type: square;
     padding-left: 20px;
 }
 
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    display: block;
-    margin: 20px auto;
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: #111;
-    color: #888;
+    background: #ddd; /* Light footer for better separation */
+    color: #444;
 }
+
