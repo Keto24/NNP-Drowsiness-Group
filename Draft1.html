@@ -96,28 +96,28 @@ Here we will outline our updated ethical sweep based on the results of our neura
         <h3>Related Works</h3>
 
         <p>
-            Existing drowsiness detection systems rely on CNN or ANN models. Salem & Waleed (2024) developed a real-time CNN-based model achieving <strong>90-99.86% accuracy</strong> across multiple datasets 
-            <a href="#ref1" class="footnote-ref">[1]</a>. Their system integrates <strong>MobileNetV2</strong>, <strong>InceptionV3</strong>, and <strong>Haar Cascade</strong> for feature extraction.
+            Existing drowsiness detection systems have been created using CNN or ANN. Salem & Waleed (2024)explores real-time drowsiness detection using CNNs and Transfer Learning,  achieving 90-99.86% accuracy across multiple datasets 
+            <a href="#ref1" class="footnote-ref">[1]</a>. It system integrates MobileNetV2, InceptionV3 and Haar Cascade for feature extraction, and a mobile application for real-world use in driver safety. The study highlights the importance of dataset diversity, bias mitigation, and real-time performance to ensure reliable drowsiness detection
         </p>
 
         <p>
-            Inkeaw et al. (2022) proposed an <strong>ANN-based system</strong> using visual facial descriptors like <strong>EAR, MAR, face length (FL), and face width balance (FWB)</strong> 
-            <a href="#ref2" class="footnote-ref">[2]</a>. The system integrates EEG-based microsleep detection and facial feature analysis.
+            Inkeaw et al. (2022) developed an Artificial Neural Network (ANN)-based drowsiness detection system using visual facial descriptors like eye aspect ratio (EAR), mouth aspect ratio (MAR), face length (FL), and face width balance (FWB).
+            <a href="#ref2" class="footnote-ref">[2]</a>.  The system integrates EEG-based microsleep detection with facial feature analysis, achieving 72.25% sensitivity and 60.40% accuracy when using Discrete Fourier Transform (DFT) with ANN. The research highlights limitations in practicality, requiring preset camera positions and restrictions on wearing sunglasses, while emphasizing the potential for real-world driver alert systems.
+
+        <p>
+           Albadawi et al. (2022) review recent advancements in driver drowsiness detection, categorizing approaches into physiological, behavioral, and vehicle-based methods. Physiological methods leverage EEG, ECG, and other biometric signals, while behavioral methods focus on facial expressions, eye closure, and head movements. Vehicle-based methods analyze driving patterns, including lane deviation and steering angle changes. The review discusses challenges such as real-time implementation, sensor reliability, and environmental conditions affecting detection accuracy.
+            <a href="#ref3" class="footnote-ref">[3]</a>. The paper also highlights the integration of machine learning techniques to enhance detection precision and adaptability across different driving conditions.
+
         </p>
 
         <p>
-            Albadawi et al. (2022) reviewed drowsiness detection methodologies, categorizing them into <strong>physiological, behavioral, and vehicle-based approaches</strong> 
-            <a href="#ref3" class="footnote-ref">[3]</a>. They highlighted challenges related to real-time implementation and sensor reliability.
+            Some current products employing drowsiness detection include Motive’s Drowsiness AI and Bosch’s Driver Drowsiness Detection. Motive’s product is a camera with AI that alerts drivers when they are yawning or have closed their eyes. The camera beeps and tells drivers to pull over and take a break. Bosch Mobility uses a steering angle sensor to determine the steering angle and steering angle velocity.
+            <a href="#ref4" class="footnote-ref">[4]</a><a href="#ref5" class="footnote-ref">[5]</a>. Measuring these factors allows the system to monitor the steering movements and advise drivers to take a break in time.
         </p>
 
         <p>
-            Commercial solutions such as <strong>Motive’s Drowsiness AI</strong> and <strong>Bosch’s Driver Drowsiness Detection</strong> utilize <strong>AI and sensor-based monitoring</strong> 
-            <a href="#ref4" class="footnote-ref">[4]</a><a href="#ref5" class="footnote-ref">[5]</a>. These solutions monitor <strong>steering behavior, lane deviation, and facial expressions</strong> to detect drowsiness.
-        </p>
-
-        <p>
-            Chinthalachervu et al. (2022) implemented a real-time drowsiness detection system using <strong>webcam-based facial expression analysis</strong> 
-            <a href="#ref6" class="footnote-ref">[6]</a>. The model calculates <strong>EAR, mouth opening ratio, and nose length ratio</strong> to detect fatigue.
+           Chinthalachervu, R. et al (2022) developed a system for detecting drowsiness in real time. The driver’s facial expressions are captured and recorded using a webcam. 
+            <a href="#ref6" class="footnote-ref">[6]</a>. The system calculates the eye aspect ratio, mouth opening ratio, and nose length ratio. The calculated values are compared to threshold values developed by the system and the difference in value leads to detection.
         </p>
 
         <h2>References</h2>
