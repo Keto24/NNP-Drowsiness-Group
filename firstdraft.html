@@ -86,6 +86,30 @@
 </div>
 
 
+<h3>Related Works</h3>
+
+<p>
+  Existing drowsiness detection systems have been created using CNN or ANN. A recent paper published in the <em>Journal of Engineering and Applied Sciences</em> shows that real-time drowsiness detection can be done using CNNs and Transfer Learning, achieving 90–99.86% accuracy across multiple datasets <a href="#ref5" class="footnote-ref">[5]</a>. It integrates pre-trained models like MobileNetV2 and InceptionV3, Haar Cascade for feature extraction, and a mobile application for real-world use in driver safety. The study highlights the importance of dataset diversity, bias mitigation, and real-time performance to ensure reliable drowsiness detection.
+</p>
+
+<p>
+  Another system was developed using an Artificial Neural Network (ANN) based on visual facial descriptors like eye aspect ratio (EAR), mouth aspect ratio (MAR), face length (FL), and face width balance (FWB) <a href="#ref6" class="footnote-ref">[6]</a>. The system integrates EEG-based microsleep detection with facial feature analysis, achieving 72.25% sensitivity and 60.40% accuracy when using Discrete Fourier Transform (DFT) with ANN. The research highlights limitations in practicality, requiring preset camera positions and restrictions on wearing sunglasses, while emphasizing the potential for real-world driver alert systems.
+</p>
+
+<p>
+  A review article provides a comprehensive overview of recent advancements in driver drowsiness detection, categorizing approaches into physiological, behavioral, and vehicle-based methods <a href="#ref1" class="footnote-ref">[1]</a>. Physiological methods leverage EEG, ECG, and other biometric signals, while behavioral methods focus on facial expressions, eye closure, and head movements. Vehicle-based methods analyze driving patterns, including lane deviation and steering angle changes. The review discusses challenges such as real-time implementation, sensor reliability, and environmental conditions affecting detection accuracy. It also highlights the integration of machine learning techniques to enhance detection precision and adaptability across different driving conditions.
+</p>
+
+<p>
+  Some current products employing drowsiness detection include Motive’s Drowsiness AI and Bosch’s Driver Drowsiness Detection. Motive’s product is a camera with AI that alerts drivers when they are yawning or have closed their eyes <a href="#ref8" class="footnote-ref">[8]</a>. The camera beeps and tells drivers to pull over and take a break. Bosch Mobility uses a steering angle sensor to determine the steering angle and steering angle velocity. Measuring these factors allows the system to monitor the steering movements and advise drivers to take a break in time <a href="#ref9" class="footnote-ref">[9]</a>.
+</p>
+
+<p>
+  A real-time system published in the <em>Journal of Physics: Conference Series</em> was developed using webcam-based facial expression analysis to detect driver drowsiness <a href="#ref7" class="footnote-ref">[7]</a>. The driver’s facial expressions are captured and recorded using a webcam. The system calculates the eye aspect ratio, mouth opening ratio, and nose length ratio. These values are compared to threshold levels, and the system flags drowsiness based on the deviations.
+</p>
+
+
+
         
         <h3>Thesis</h3>
         <p>The driver drowsiness detection system will help save thousands of lives if not millions. We as a society can use AI for the benefit of our good and make our roads safer.
@@ -152,38 +176,45 @@ Here we will outline our updated ethical sweep based on the results of our neura
             <a href="#ref6" class="footnote-ref">[6]</a>. The system calculates the eye aspect ratio, mouth opening ratio, and nose length ratio. The calculated values are compared to threshold values developed by the system and the difference in value leads to detection.
         </p>
 
-        <h2>References</h2>
+       <h3>References</h3>
+<h3>References</h3>
 
-        <p id="ref1" class="footnote">
-            [1] Albadawi, Y., Takruri, M., & Awad, M. (2022). A Review of Recent Developments in Driver Drowsiness Detection Systems. 
-            <em>Sensors</em>. <a href="https://doi.org/10.3390/s22052069" target="_blank">Read here</a>.
-        </p>
+<p id="ref1">
+  [1] Albadawi, Y., Takruri, M., & Awad, M. (2022). A Review of Recent Developments in Driver Drowsiness Detection Systems. <em>Sensors</em>, 22(5), 2069. <a href="https://doi.org/10.3390/s22052069" target="_blank">https://doi.org/10.3390/s22052069</a>
+</p>
 
-        <p id="ref2" class="footnote">
-            [2] Salem, D., & Waleed, M. (2024). Drowsiness detection in real-time via convolutional neural networks and transfer learning. 
-            <em>Journal of Engineering and Applied Science</em>. <a href="https://doi.org/10.1186/s44147-024-00457-z" target="_blank">Read here</a>.
+<p id="ref2">
+  [2] Dawson, D., & Reid, K. (1997). Fatigue, alcohol and performance impairment. <em>Nature</em>, 388(6639), 235. <a href="https://doi.org/10.1038/40775" target="_blank">https://doi.org/10.1038/40775</a>
+</p>
 
-        <p id="ref3" class="footnote">
-            [3] Inkeaw, P., Srikummoon, P., Chaijaruwanich, J., et al. (2022). Automatic Driver Drowsiness Detection Using ANN Based on Visual Facial Descriptors. 
-            <em>Nature and Science of Sleep</em>. <a href="https://doi.org/10.2147/NSS.S376755" target="_blank">Read here</a>.
-        </p>
-        </p>
+<p id="ref3">
+  [3] Bayne, A., Trivedi, N., Liotta, M., Siegfried, A., Gaspar, J. G., & Carney, C. (2022). Countermeasures to Reduce Drowsy Driving: Results of a Literature Review and Discussions with Experts (Technical Report). AAA Foundation for Traffic Safety.
+</p>
 
-        <p id="ref4" class="footnote">
-            [4] Motive. Drowsiness AI battles the dangers of driver fatigue. 
-            <a href="https://gomotive.com/blog/drowsy-driver-detection/" target="_blank">Read here</a>.
-        </p>
+<p id="ref4">
+  [4] Nasri, I. (2022, May 20). Driver Drowsiness Dataset (DDD). <em>Kaggle</em>. <a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd</a>
+</p>
 
-        <p id="ref5" class="footnote">
-            [5] Bosch Mobility. Driver drowsiness detection. 
-            <a href="https://www.bosch-mobility.com/en/solutions/assistance-systems/driver-drowsiness-detection/" target="_blank">Read here</a>.
-        </p>
+<p id="ref5">
+  [5] Salem, D., & Waleed, M. (2024). Drowsiness detection in real-time via convolutional neural networks and transfer learning. <em>Journal of Engineering and Applied Science</em>, 71, 122. <a href="https://doi.org/10.1186/s44147-024-00457-z" target="_blank">https://doi.org/10.1186/s44147-024-00457-z</a>
+</p>
 
-        <p id="ref6" class="footnote">
-            [6] Chinthalachervu, R., et al. (2022). Driver Drowsiness Detection and Monitoring System using Machine Learning. 
-            <em>Journal of Physics: Conference Series</em>. <a href="https://doi.org/10.1088/1742-6596/2325/1/012057" target="_blank">Read here</a>.
-        </p>
-    </div>
+<p id="ref6">
+  [6] Inkeaw, P., Srikummoon, P., Chaijaruwanich, J., Traisathit, P., Awiphan, S., Inchai, J., Worasuthaneewan, R., & Theerakittikul, T. (2022). Automatic Driver Drowsiness Detection Using Artificial Neural Network Based on Visual Facial Descriptors: Pilot Study. <em>Nature and Science of Sleep</em>, 14, 1641–1649. <a href="https://doi.org/10.2147/NSS.S376755" target="_blank">https://doi.org/10.2147/NSS.S376755</a>
+</p>
+
+<p id="ref7">
+  [7] Chinthalachervu, R., et al. (2022). Driver Drowsiness Detection and Monitoring System using Machine Learning. <em>Journal of Physics: Conference Series</em>, 2325, 012057. <a href="https://doi.org/10.1088/1742-6596/2325/1/012057" target="_blank">https://doi.org/10.1088/1742-6596/2325/1/012057</a>
+</p>
+
+<p id="ref8">
+  [8] Lee, L. (2024, August 16). Drowsiness AI battles the dangers of driver fatigue. <em>Motive</em>. <a href="https://gomotive.com/blog/drowsy-driver-detection/" target="_blank">https://gomotive.com/blog/drowsy-driver-detection/</a>
+</p>
+
+<p id="ref9">
+  [9] Bosch Mobility. (n.d.). Driver Drowsiness Detection. <a href="https://www.bosch-mobility.com/en/solutions/assistance-systems/driver-drowsiness-detection/" target="_blank">https://www.bosch-mobility.com/en/solutions/assistance-systems/driver-drowsiness-detection/</a>
+</p>
+
 
     <footer>
         <p>&copy; 2025 | Neural Networks Course Project | Created by Yelnur Abdushev, Emma Gandonou, Keto</p>
