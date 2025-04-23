@@ -125,32 +125,47 @@
   We used OpenCV for facial extraction (e.g, eye aspect ratio), and the Twilio app to send alerts when drowsiness was detected. Python, Jupyter Hub, and Tensorflow were the main tools of development. Some of the pitfalls we encountered were drastic overfitting and lengthy run times, which we attempted to address through using GPU other than CPU, and using regularization and dropout layers.
 </p>
 
+<<h3>Discussion/Results</h3>
 
-        <ul>
-            <li>Facial feature extraction for detecting drowsiness signs.</li>
-            <li>Integration of machine learning models with real-time alerts.</li>
-            <li>Testing across diverse environments to ensure generalizability.</li>
-        </ul>
+<p>
+  After comparing the three datasets, we found that (there was no significant difference in results between datasets) or (one of the datasets: _______ produced the best results). We chose this dataset to pair with our model in wrapping into an application so users can upload pictures and the model will determine if the user if drowsy or alert.
+</p>
+
+<p>
+  The best accuracy that we were able to produce was ________ by using ____ epochs and adjusting the ______ hyperparameters. Figure 1 shows our starting validation and training accuracy and loss over epochs, with drastic overfitting. Figure 2 shows the validation training accuracy and loss after making adjustments to the model, where improved accuracy and less overfitting is demonstrated.
+</p>
+
+<p><strong>Figure 1</strong></p>
+<img src="figure1.jpg" alt="Training Accuracy and Loss - Initial" style="width: 100%; max-width: 600px; border-radius: 8px; margin-bottom: 20px;" />
+
+<p><strong>Figure 2</strong></p>
+<img src="figure2.jpg" alt="Training Accuracy and Loss - After Adjustment" style="width: 100%; max-width: 600px; border-radius: 8px; margin-bottom: 20px;" />
+
+<h3>Conclusion</h3>
+<p>
+  Although our drowsiness detection system is not perfect, we believe that with extensive time and resources it could be developed into a stronger and more reliable model. Driver drowsiness detection systems have high potential, as they could be implemented in any vehicle type: not just cars. When the system is perfected to the point where it's reliable, it could save thousands if not millions of lives on the road. For our future work, we want to be able to implement such technology as widely as possible, by making it accessible without compromising safety.
+</p>
+<p>
+  Firstly, we could make our model be able to take live video footage as input instead of pictures. We could also incorporate an even vaster dataset, using data augmentation to increase the quality of the dataset as well. We would also wrap our model with a hands-free, sophisticated app that can produce audio telling the driver to stop, alert family and friends, and make loud sounds to wake the driver. Additionally, we could develop a model that is able to detect drowsiness through phones with low camera quality, as well in areas with weak cellular networks. We would also work with car companies to build the technology into the cars, instead of just an app. The possibilities are limitless, and we look forward to exploring the potential of our driver drowsiness detection system further.
+</p>
+
+<blockquote style="font-style: italic; color: #555; margin: 20px 0;">
+  “What all of us have to do is to make sure we are using AI in a way that is for the benefit of humanity, not to the detriment of humanity.” – Tim Cook
+</blockquote>
+
+<h3>Reflection</h3>
+<p>
+  If we were to do this project again, we would start earlier so that we would have more time to implement the wrapping of an app in a more usable manner. We also might have tried to combine the three datasets into one dataset for a very extensive dataset, instead of comparing the three. However, this could have extended the training time exponentially. Additionally, we might have asked for guidance and help on certain aspects of the project instead of spending a lot of time struggling with code and errors.
+</p>
+
+<h3>To Do</h3>
+<ul>
+  <li>Finish training the model on the other 2 datasets</li>
+  <li>Keep reducing overfitting</li>
+  <li>Wrap with gradio</li>
+</ul>
 
 
-        <h3>Discussion Outline</h3>
-        <p>We trained a Convolutional Neural Network (CNN) using MobileNetV2 with transfer learning to detect driver drowsiness based on eye features extracted from real-time webcam input.</p>
-
-<p>We used the Driver Drowsiness Dataset, which  improved the model's robustness across different eye shapes, lighting conditions, and image qualities.</p>
-
-<p>The data was preprocessed using OpenCV to extract facial landmarks and compute the eye aspect ratio (EAR), which were then used as inputs for classification.</p>
-
-<p>Our primary metric for model evaluation will be classification accuracy and precision, as these best reflect the model’s ability to correctly detect drowsy vs. alert states.</p>
-
-<p>We will compare the model’s performance against baseline models and other lightweight CNNs  to understand the trade-offs in accuracy vs. inference time.</p>
-
-<p>Compared to prior studies with access to large-scale or more curated datasets, our model is expected to perform slightly worse, though still functional enough for real-time applications.</p>
-
-<p>In the future, we would fine-tune fewer architectures more thoroughly and experiment with different diverse  data sets  and thresholds for the eye aspect ratio to better capture edge cases like glasses or squinting.</p>
-
-<p>One limitation we anticipate is lack of data set diversity and  reduced accuracy under poor lighting or occlusion from glasses. We aim to mitigate this through data augmentation and possibly collecting custom diverse data.</p>
-        
-        
 <h3>References</h3>
 
 <p id="ref1">
