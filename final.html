@@ -98,10 +98,32 @@ Although we developed our model ethically to the best of our capabilities by fol
 </p>
 
 
+<h3>Related Works</h3>
 
-        <h3>Discussion</h3>
-         </p>Here we will talk about the results of our neural network. Topic related to second point of thesis: Our neural network model Supporting paragraphs: Information regarding out neural network model. </p>
-        
+<p>
+Existing drowsiness detection systems use feed-forward neural networks (NNs) and CNNs. A study by Salem & Waleed <sup>[8]</sup> explores real-time drowsiness detection using CNNs and transfer learning, achieving 90–99.86% accuracy across multiple datasets. It integrates pre-trained models like 
+<a href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/" target="_blank">MobileNetV2</a>, 
+<a href="https://keras.io/api/applications/inceptionv3/" target="_blank">InceptionV3</a>, and 
+<a href="https://github.com/opencv/opencv/tree/master/data/haarcascades" target="_blank">Haar Cascade</a> 
+for feature extraction, and a mobile application for real-world use in driver safety. The study highlights the importance of dataset diversity, bias mitigation, and real-time performance to ensure reliable drowsiness detection.
+</p>
+
+<p>
+Another study done using Artificial Neural Network Based on Visual Facial Descriptor <sup>[9]</sup> developed a drowsiness detection system using visual facial descriptors like eye aspect ratio (EAR), mouth aspect ratio (MAR), face length (FL), and face width balance (FWB). The system integrates EEG-based microsleep detection with facial feature analysis, achieving 72.25% sensitivity and 60.40% accuracy when using Discrete Fourier Transform (DFT) with ANN. The research highlights limitations in practicality, requiring preset camera positions and restrictions on wearing sunglasses while emphasizing the potential for real-world driver alert systems.
+</p>
+
+<p>
+A review of recent advancements in driver drowsiness detection <sup>[1]</sup> categorizes approaches into physiological, behavioral, and vehicle-based methods. Physiological methods leverage EEG, ECG, and other biometric signals, while behavioral methods focus on facial expressions, eye closure, and head movements. Vehicle-based methods analyze driving patterns, including lane deviation and steering angle changes. The review discusses challenges such as real-time implementation, sensor reliability, and environmental conditions affecting detection accuracy. The paper also highlights the integration of machine learning techniques to enhance detection precision and adaptability across different driving conditions.
+</p>
+
+<p>
+A study published in the <em>Journal of Physics: Conference Series</em> <sup>[10]</sup> developed a system for detecting drowsiness in real-time. The driver’s facial expressions are captured and recorded using a webcam. The system calculates the eye aspect ratio, mouth opening ratio, and nose length ratio. The calculated values are compared to threshold values developed by the system, and the difference in value leads to detection.
+</p>
+
+<p>
+Some current products employing drowsiness detection include Motive’s Drowsiness AI and Bosch’s Driver Drowsiness Detection. Motive’s product is a camera with AI that alerts drivers when they are yawning or have closed their eyes. The camera beeps and tells drivers to pull over and take a break. Bosch Mobility uses a steering angle sensor to determine the steering angle and steering angle velocity. Measuring these factors allows the system to monitor the steering movements and advise drivers to take a break in time.
+</p>
+
          <h3>Ethical Sweep</h3>
         <p>
 Here we will outline our updated ethical sweep based on the results of our neural network. Some ethical considerations include the use of a camera, because using camera recordings without consent would be unethical. Another consideration is if we alert law enforcement with our app, that would result in consequences for the user, and our neural network will not always be accurate. Additionally, different repercussions could happen for different demographics.        </p>
@@ -166,7 +188,24 @@ Here we will outline our updated ethical sweep based on the results of our neura
     <em>Countermeasures to Reduce Drowsy Driving: Results of a Literature Review and Discussions with Experts</em>. 
     Washington, D.C.: AAA Foundation for Traffic Safety.
 </p>
+<p id="ref8" class="footnote">
+    [8] Salem, D., & Waleed, M. (2024). Drowsiness detection in real-time via convolutional neural networks and transfer learning. 
+    <em>Journal of Engineering and Applied Science</em>, 71, 122. 
+    <a href="https://doi.org/10.1186/s44147-024-00457-z" target="_blank">Read here</a>.
+</p>
 
+<p id="ref9" class="footnote">
+    [9] Inkeaw, P., Srikummoon, P., Chaijaruwanich, J., Traisathit, P., Awiphan, S., Inchai, J., Worasuthaneewan, R., & Theerakittikul, T. (2022). 
+    Automatic Driver Drowsiness Detection Using Artificial Neural Network Based on Visual Facial Descriptors: Pilot Study. 
+    <em>Nature and Science of Sleep</em>, 14, 1641–1649. 
+    <a href="https://doi.org/10.2147/NSS.S376755" target="_blank">Read here</a>.
+</p>
+
+<p id="ref10" class="footnote">
+    [10] Chinthalachervu, R., et al. (2022). Driver Drowsiness Detection and Monitoring System using Machine Learning. 
+    <em>Journal of Physics: Conference Series</em>, Volume 2325, 012057. 
+    <a href="https://doi.org/10.1088/1742-6596/2325/1/012057" target="_blank">Read here</a>.
+</p>
 
     </div>
 
