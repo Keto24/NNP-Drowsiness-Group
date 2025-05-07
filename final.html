@@ -98,31 +98,32 @@ Although we developed our model ethically to the best of our capabilities by fol
 </p>
 
 
+
 <h3>Related Works</h3>
 
 <p>
-Existing drowsiness detection systems use feed-forward neural networks (NNs) and CNNs. A study by Salem & Waleed <sup>[8]</sup> explores real-time drowsiness detection using CNNs and transfer learning, achieving 90–99.86% accuracy across multiple datasets. It integrates pre-trained models like 
+Existing drowsiness detection systems use feed-forward neural networks (NNs) and CNNs. Professor Saleem and Waleed of MUST University  explore real-time drowsiness detection using CNNs and transfer learning, achieving 90–99.86% accuracy across multiple datasets. Their system integrates pre-trained models like 
 <a href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/" target="_blank">MobileNetV2</a>, 
 <a href="https://keras.io/api/applications/inceptionv3/" target="_blank">InceptionV3</a>, and 
 <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades" target="_blank">Haar Cascade</a> 
-for feature extraction, and a mobile application for real-world use in driver safety. The study highlights the importance of dataset diversity, bias mitigation, and real-time performance to ensure reliable drowsiness detection.
+for feature extraction, along with a mobile application for real-world use in driver safety. The study highlights the importance of dataset diversity, bias mitigation, and real-time performance to ensure reliable drowsiness detection. <a href="#ref8" class="footnote-ref">[8]</a>
 </p>
 
 <p>
-Another study done using Artificial Neural Network Based on Visual Facial Descriptor <sup>[9]</sup> developed a drowsiness detection system using visual facial descriptors like eye aspect ratio (EAR), mouth aspect ratio (MAR), face length (FL), and face width balance (FWB). The system integrates EEG-based microsleep detection with facial feature analysis, achieving 72.25% sensitivity and 60.40% accuracy when using Discrete Fourier Transform (DFT) with ANN. The research highlights limitations in practicality, requiring preset camera positions and restrictions on wearing sunglasses while emphasizing the potential for real-world driver alert systems.
+Another study developed a Neural Network (NN)-based drowsiness detection system using visual facial descriptors like eye aspect ratio (EAR), mouth aspect ratio (MAR), face length (FL), and face width balance (FWB). The system integrates EEG-based microsleep detection with facial feature analysis, achieving 72.25% sensitivity and 60.40% accuracy using Discrete Fourier Transform (DFT) with ANN. The research highlights limitations in practicality, such as requiring preset camera positions and restrictions on wearing sunglasses, while emphasizing the potential for real-world driver alert systems. <a href="#ref9" class="footnote-ref">[9]</a>
+</p>
+<p>
+A review of recent advancements in driver drowsiness detection categorizes approaches into physiological, behavioral, and vehicle-based methods. Physiological methods leverage EEG, ECG, and other biometric signals, while behavioral methods focus on facial expressions, eye closure, and head movements. Vehicle-based methods analyze driving patterns, including lane deviation and steering angle changes. The review discusses challenges such as real-time implementation, sensor reliability, and environmental conditions affecting detection accuracy. The paper also highlights the integration of machine learning techniques to enhance detection precision and adaptability across different driving conditions. <a href="#ref1" class="footnote-ref">[1]</a>
 </p>
 
 <p>
-A review of recent advancements in driver drowsiness detection <sup>[1]</sup> categorizes approaches into physiological, behavioral, and vehicle-based methods. Physiological methods leverage EEG, ECG, and other biometric signals, while behavioral methods focus on facial expressions, eye closure, and head movements. Vehicle-based methods analyze driving patterns, including lane deviation and steering angle changes. The review discusses challenges such as real-time implementation, sensor reliability, and environmental conditions affecting detection accuracy. The paper also highlights the integration of machine learning techniques to enhance detection precision and adaptability across different driving conditions.
+A study published in the <Journal of Physics: Conference Series</em> developed a real-time drowsiness detection system. It captures and records drivers’ facial expressions using a webcam, calculates the eye aspect ratio, mouth opening ratio, and nose length ratio, and compares them to threshold values to detect drowsiness. <a href="#ref10" class="footnote-ref">[10]</a>
 </p>
 
 <p>
-A study published in the <em>Journal of Physics: Conference Series</em> <sup>[10]</sup> developed a system for detecting drowsiness in real-time. The driver’s facial expressions are captured and recorded using a webcam. The system calculates the eye aspect ratio, mouth opening ratio, and nose length ratio. The calculated values are compared to threshold values developed by the system, and the difference in value leads to detection.
+Some current products employing drowsiness detection include Motive’s Drowsiness AI and Bosch’s Driver Drowsiness Detection. Motive’s product uses a camera with AI to alert drivers when they are yawning or have closed their eyes. The camera beeps and advises drivers to pull over and take a break. Bosch Mobility uses a steering angle sensor to determine both the steering angle and velocity, which allows the system to monitor the driver’s behavior and provide break recommendations.
 </p>
 
-<p>
-Some current products employing drowsiness detection include Motive’s Drowsiness AI and Bosch’s Driver Drowsiness Detection. Motive’s product is a camera with AI that alerts drivers when they are yawning or have closed their eyes. The camera beeps and tells drivers to pull over and take a break. Bosch Mobility uses a steering angle sensor to determine the steering angle and steering angle velocity. Measuring these factors allows the system to monitor the steering movements and advise drivers to take a break in time.
-</p>
 
          <h3>Ethical Sweep</h3>
         <p>
