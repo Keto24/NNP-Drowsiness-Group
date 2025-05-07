@@ -164,62 +164,63 @@ By assigning a port number and using our terminal, we were able to get a web pag
 The largest challenge we faced while training our model was significant overfitting. Over epochs, validation accuracy would decrease while validation loss would increase.
 </p>
 
+<img src="figure1.png" alt="Figure 1: Results with no regularization, data augmentation, early stopping, or fine-tuning. Dropout values = 0.3, 0.2." width="100%">
 <p><strong>Figure 1:</strong> Results with no regularization, data augmentation, early stopping, or fine-tuning. Dropout values = 0.3, 0.2.</p>
-<img src="figure1.png" alt="Figure 1" width="100%">
+
 
 <p>
 The first step we took to reduce overfitting was adding regularization to penalize complexity. 
 </p>
 
-<p><strong>Figure 2:</strong> Results with <code>x = Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.001))(x)</code>. Validation loss is still increasing, but the slope is gentler and accuracy is slightly better.
-</p>
-<img src="figure2.png" alt="Figure 2" width="100%">
+<<img src="figure2.png" alt="Figure 2: Results with x = Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.001))(x)" width="100%">
+<p><strong>Figure 2:</strong> Results with x = Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.001))(x)</p>
 
 <p>
 Next, we increased dropout values. This helped validation loss decrease slightly, though accuracy also dipped.
 </p>
 
-<p><strong>Figure 3:</strong> Regularizer value 0.005, dropout values 0.5, 0.4.</p>
-<img src="figure3.png" alt="Figure 3" width="100%">
+<img src="figure3.png" alt="Figure 3: Results with regularizer value 0.005, and dropout values 0.5, 0.4." width="100%">
+<p><strong>Figure 3:</strong> Results with regularizer value 0.005, and dropout values 0.5, 0.4.</p>
 
 <p>
 We also changed the batch size. A larger batch size reduced noise and improved validation metrics.
 </p>
 
-<p><strong>Figure 4:</strong> Regularizer value 0.001, dropout 0.3/0.2, batch size = 100.</p>
-<img src="figure4.png" alt="Figure 4" width="100%">
+<img src="figure4.png" alt="Figure 4: Results with regularizer value 0.001, and dropout values 0.3, 0.2, and batch_size = 100" width="100%">
+<p><strong>Figure 4:</strong> Results with regularizer value 0.001, and dropout values 0.3, 0.2, and batch_size = 100</p>
 
 <p>
 Early stopping and fine-tuning brought notable improvements. Validation loss decreased and accuracy improved.
 </p>
 
-<p><strong>Figure 5:</strong> Early stopping & fine-tuning, regularizer 0.003, dropout 0.4/0.3, batch size = 150.</p>
-<img src="figure5.png" alt="Figure 5" width="100%">
+<img src="figure5.png" alt="Figure 5: Results with early stopping & fine tuning, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 150" width="100%">
+<p><strong>Figure 5:</strong> Results with early stopping & fine tuning, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 150</p>
 
 <p>
 We tried increasing the learning rate, but it led to worse results.
 </p>
 
-<p><strong>Figure 6:</strong> Learning rate = 0.0003, regularizer 0.003, dropout 0.4/0.3, batch size = 100.</p>
-<img src="figure6.png" alt="Figure 6" width="100%">
+<img src="figure6.png" alt="Figure 6: Results with model.compile(optimizer=Adam(learning_rate=0.0003), regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 100" width="100%">
+<p><strong>Figure 6:</strong> Results with model.compile(optimizer=Adam(learning_rate=0.0003), regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 100</p>
+
 
 <p>
 Data augmentation led to our best performance, allowing the model to generalize better to unseen data.
 </p>
 
-<p><strong>Figure 7:</strong> With data augmentation, early stopping, fine-tuning. Learning rate = 0.0001, regularizer 0.003, dropout 0.4/0.3, batch size = 128.</p>
-<img src="figure7.png" alt="Figure 7" width="100%">
+<<img src="figure7.png" alt="Figure 7: Results with data augmentation, early stopping & fine tuning, learning_rate=0.0001, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 128" width="100%">
+<p><strong>Figure 7:</strong> Results with data augmentation, early stopping & fine tuning, learning_rate=0.0001, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 128</p>
+
 
 <h4>Running on GPU</h4>
 <p>
 Another challenge was the inability to use GPU on JupyterHub. We ran the model on CPU, which made training slow. Reducing dataset size or number of epochs sped things up, but hurt performance.
 </p>
 
-<p><strong>Figure 8:</strong> Training with ~12k images (30% of dataset) led to poor generalization despite augmentation and tuning.</p>
-<img src="figure8.png" alt="Figure 8" width="100%">
-
+<img src="figure8.png" alt="Figure 8: Results with data augmentation, early stopping, and fine-tuning on a small dataset (~12k images)" width="100%">
+<p><strong>Figure 8:</strong> Results with data augmentation, early stopping, and fine-tuning on a small dataset (~12k images)</p>
 <p>
-Eventually, we switched to Google Colab, which allowed us to train on GPU. This reduced training time and enabled us to run data augmentation and more epochs successfully.
+Eventually, we switched to <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, which allowed us to train on GPU. This reduced training time and enabled us to run data augmentation and more epochs successfully.
 </p>
 
 
