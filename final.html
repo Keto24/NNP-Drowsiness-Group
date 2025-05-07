@@ -157,30 +157,67 @@ we wrapped the final model with
 <a href="https://jupyter.org/hub" target="_blank">JupyterHub</a>. 
 By assigning a port number and using our terminal, we were able to get a web page running with a public link where we could upload a picture of a face, and the model would output “Drowsiness detected” or “No drowsiness.”
 </p>
-         <h3>Restated Thesis</h3>
-          </p>The driver drowsiness detection system will help save thousands of lives if not millions. We as a society can use AI for the benefit of our good and make our roads safer. </p>
-        <h3>Future Work</h3>
-        <p>We want to be able to implement such technology as widely as possible, perhaps make it built into cars instead of an app.</p>
+         <<section style="max-width: 800px; margin: auto;">
+  <h2>Challenges</h2>
 
-        <h3>Related Works</h3>
+  <h3>Overfitting</h3>
+  <p>
+    The largest challenge that we faced while training our model was significant overfitting. Over epochs, validation accuracy would decrease while validation loss would increase. Figure 1 displays our first results.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.56.09_AM.png" alt="Figure 1" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 1:</strong> Results with no regularization, data augmentation, early stopping, or fine tuning. Dropout values = 0.3, 0.2</p>
 
-        <p>
-        Recent advancements in driver drowsiness detection methodologies have categorized approaches into physiological, behavioral, and vehicle-based methods <a href="#ref3" class="footnote-ref">[1]</a>. Physiological methods leverage biometric signals such as EEG and ECG, behavioral methods analyze facial expressions and head movements, and vehicle-based methods evaluate driving patterns like lane deviation and steering angle changes. Challenges discussed include real-time implementation, sensor reliability, and environmental impacts on detection accuracy. This research also emphasizes integrating machine learning to enhance detection precision and adaptability.
-        <p>
-          Existing drowsiness detection systems have been created using CNN or ANN. A detection system proposed by Dina Salem and Mohaammed Waleed explores real-time drowsiness detection using CNNs and Transfer Learning,  achieving 90-99.86% accuracy across multiple datasets 
-            <a href="#ref1" class="footnote-ref">[2]</a>. It's a system that integrates MobileNetV2, InceptionV3 and Haar Cascade for feature extraction, and a mobile application for real-world use in driver safety. The study highlights the importance of dataset diversity, bias mitigation, and real-time performance to ensure reliable drowsiness detection
-        </p>
-            Another ANN-based drowsiness detection system was developed using visual facial descriptors such as eye aspect ratio (EAR), mouth aspect ratio (MAR), face length (FL), and face width balance (FWB).
-            <a href="#ref2" class="footnote-ref">[3]</a>. The devlopers combined  EEG-based microsleep detection with facial feature analysis, achieving 72.25% sensitivity and 60.40% accuracy when using Discrete Fourier Transform (DFT) with ANN. Even though the system had moderate accuracy, it was't with out it's   limitations in practicality, as it requires  preset camera positions and restrictions on wearing sunglasses, while emphasizing the potential for real-world driver alert systems.
-        <p>
-            Some current products employing drowsiness detection include Motive’s Drowsiness AI and Bosch’s Driver Drowsiness Detection. Motive’s product is a camera with AI that alerts drivers when they are yawning or have closed their eyes. The camera beeps and tells drivers to pull over and take a break. Bosch Mobility uses a steering angle sensor to determine the steering angle and steering angle velocity.
-            <a href="#ref4" class="footnote-ref">[4]</a><a href="#ref5" class="footnote-ref">[5]</a>. Measuring these factors allows the system to monitor the steering movements and advise drivers to take a break in time.
-        </p>
+  <p>
+    The first step we took to attempt to reduce overfitting was adding regularization to penalize overfitting. Figure 2 demonstrates our results after adding regularizers with a value of 0.001. As shown below, validation loss is still increasing, however, the slope is much less steep, and the final value is smaller after the same number of epochs. Validation accuracy is also higher than in Figure 1.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.56.23_AM.png" alt="Figure 2" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 2:</strong> Results with x = Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.001))(x)</p>
 
-        <p>
-          In regards to real-time system, a recent published on Journal of Physics was developed using webcam-based facial expression analysis to detect driver drowsiness. The driver’s facial expressions are captured and recorded using a webcam. 
-            <a href="#ref6" class="footnote-ref">[6]</a>. The system calculates the eye aspect ratio, mouth opening ratio, and nose length ratio. The calculated values are compared to threshold values developed by the system and the difference in value leads to detection.
-        </p>
+  <p>
+    The second step we took to reduce overfitting was increasing dropout values. Figure 3 demonstrates our results after an increase of both regularizer and dropout values. In this figure, validation accuracy is still decreasing, but validation loss is decreasing. However, increasing these values too harshly led to a decrease in training and validation accuracy. Thus, we searched for alternative ways to reduce overfitting.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.56.34_AM.png" alt="Figure 3" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 3:</strong> Results with regularizer value 0.005, and dropout values 0.5, 0.4.</p>
+
+  <p>
+    Another measure we attempted was to adjust the batch size. Figure 4 demonstrates the same hyperparameters as Figure 2, but with a batch size of 100 instead of the original 32. Compared to Figure 2, validation accuracy increases, validation loss is lower overall, and noise is reduced.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.56.44_AM.png" alt="Figure 4" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 4:</strong> Results with regularizer value 0.001, and dropout values 0.3, 0.2, and batch_size = 100</p>
+
+  <p>
+    We also implemented early stopping so that the model would stop training if it was overfitting, and fine-tuning (unfreezing some MobileNetV2 layers and continuing with another 10 epochs with a lower learning rate). This led to much better results, as displayed in Figure 5. Validation accuracy increases slightly over epochs, and validation loss decreases.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.56.52_AM.png" alt="Figure 5" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 5:</strong> Results with early stopping & fine tuning, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 150</p>
+
+  <p>
+    We also attempted to further improve our results by increasing the learning rate for the Adam optimizer; however, doing so led to worse results, and we did not find any value that resulted in better accuracy and loss values other than the default 0.0001. Figure 6 displays the results of a learning rate value of 0.0003. Validation accuracy is decreasing, and validation loss is increasing once more.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.57.01_AM.png" alt="Figure 6" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 6:</strong> Results with model.compile(optimizer=Adam(learning_rate=0.0003), regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 100</p>
+
+  <p>
+    Finally, we implemented data augmentation to slightly alter the existing images in the dataset, which would increase the size of the dataset and help our model generalize, not memorize, the training data. This method led to the best results, as shown in Figure 7, where validation accuracy increases overall and validation loss decreases overall.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.57.15_AM.png" alt="Figure 7" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 7:</strong> Results with data augmentation, early stopping & fine tuning, learning_rate=0.0001, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 128</p>
+
+  <h3>Running on GPU</h3>
+  <p>
+    Another challenge we encountered was the inability to run our model on the GPU in JupyterHub. As a result, we had to run it on the CPU, which significantly increased the time required to obtain results and iterate on our model. We attempted two solutions: one was to reduce the number of epochs to 5, and the other was to only train the model on 12,339 images, so about 30% of the dataset. The first solution was helpful, reducing training time from 40 minutes to 15–20 minutes.
+  </p>
+  <p>
+    However, as shown in Figure 8, the second solution led to very bad results (50% accuracy), most likely due to the model outputting “Drowsy” for every image and not learning. Despite adjusting various hyperparameters, the results from using a smaller dataset continued to be very poor. We hypothesize that, because there are many images from the same person, the images we grabbed were likely several hundred images only from a handful of different people. Therefore, the model was not able to learn due to a lack of variety.
+  </p>
+  <img src="Screenshot_2025-05-07_at_7.57.25_AM.png" alt="Figure 8" style="width:100%; margin-bottom: 10px;">
+  <p><strong>Figure 8:</strong> Results with data augmentation, early stopping, and fine-tuning on a small dataset (~12k images)</p>
+
+  <p>
+    Eventually, we decided to use Google Colab instead, and we were able to train our model on the GPU. We were able to run 20 epochs and use data augmentation (which enlarges the dataset, increasing the runtime further) in about 30 minutes, which led to the results shown in Figure 7.
+  </p>
+</section>
+
 
         <<h2>References</h2>
 
