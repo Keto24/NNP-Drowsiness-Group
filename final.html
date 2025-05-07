@@ -161,7 +161,8 @@ By assigning a port number and using our terminal, we were able to get a web pag
 
 <h4>Overfitting</h4>
 <p>
-The largest challenge we faced while training our model was significant overfitting. Over epochs, validation accuracy would decrease while validation loss would increase.
+The largest challenge we faced while training our model was significant overfitting. Over epochs, validation accuracy would decrease while validation loss would increase. Figure 1 displays our first results.
+
 </p>
 
 <img src="figure1.png" alt="Figure 1: Results with no regularization, data augmentation, early stopping, or fine-tuning. Dropout values = 0.3, 0.2." width="100%">
@@ -169,44 +170,40 @@ The largest challenge we faced while training our model was significant overfitt
 
 
 <p>
-The first step we took to reduce overfitting was adding regularization to penalize complexity. 
-</p>
+The first step we took to attempt to reduce overfitting was adding regularization to penalize overfitting. Figure 2 demonstrates our results after adding regularizers with a value of 0.001. As shown below, validation loss is still increasing, however, the slope is much less steep, and the final value is smaller after the same number of epochs. Validation accuracy is also higher than in Figure 1.</p>
 
 <<img src="figure2.png" alt="Figure 2: Results with x = Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.001))(x)" width="100%">
 <p><strong>Figure 2:</strong> Results with x = Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.001))(x)</p>
 
 <p>
-Next, we increased dropout values. This helped validation loss decrease slightly, though accuracy also dipped.
-</p>
+The second step we took to reduce overfitting was increasing dropout values. Figure 3 demonstrates our results after an increase of both regularizer and dropout values. In this figure, validation accuracy is still decreasing, but validation loss is decreasing. However, increasing these values too harshly led to a decrease in training and validation accuracy. Thus, we searched for alternative ways to reduce overfitting.</p>
 
 <img src="figure3.png" alt="Figure 3: Results with regularizer value 0.005, and dropout values 0.5, 0.4." width="100%">
 <p><strong>Figure 3:</strong> Results with regularizer value 0.005, and dropout values 0.5, 0.4.</p>
 
 <p>
-We also changed the batch size. A larger batch size reduced noise and improved validation metrics.
+Another measure we attempted was to adjust the batch size. Figure 4 demonstrates the same hyperparameters as Figure 2, but with a batch size of 100 instead of the original 32. Compared to Figure 2, validation accuracy increases, validation loss is lower overall, and noise is reduced.
 </p>
 
 <img src="figure4.png" alt="Figure 4: Results with regularizer value 0.001, and dropout values 0.3, 0.2, and batch_size = 100" width="100%">
 <p><strong>Figure 4:</strong> Results with regularizer value 0.001, and dropout values 0.3, 0.2, and batch_size = 100</p>
 
 <p>
-Early stopping and fine-tuning brought notable improvements. Validation loss decreased and accuracy improved.
+We also implemented early stopping so that the model would stop training if it was overfitting, and fine-tuning (unfreezing some MobileNetV2 layers and continuing with another 10 epochs with a lower learning rate). This led to much better results, as displayed in Figure 5. Validation accuracy increases slightly over epochs, and validation loss decreases. 
 </p>
 
 <img src="figure5.png" alt="Figure 5: Results with early stopping & fine tuning, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 150" width="100%">
 <p><strong>Figure 5:</strong> Results with early stopping & fine tuning, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 150</p>
 
 <p>
-We tried increasing the learning rate, but it led to worse results.
-</p>
+We also attempted to further improve our results by increasing the learning rate for the Adam optimizer; however, doing so led to worse results, and we did not find any value that resulted in better accuracy and loss values other than the default 0.0001. Figure 6 displays the results of a learning rate value of 0.0003. Validation accuracy is decreasing, and validation loss is increasing once more.</p>
 
 <img src="figure6.png" alt="Figure 6: Results with model.compile(optimizer=Adam(learning_rate=0.0003), regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 100" width="100%">
 <p><strong>Figure 6:</strong> Results with model.compile(optimizer=Adam(learning_rate=0.0003), regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 100</p>
 
 
 <p>
-Data augmentation led to our best performance, allowing the model to generalize better to unseen data.
-</p>
+Finally, we implemented data augmentation to slightly alter the existing images in the dataset, which would increase the size of the dataset and help our model generalize, not memorize, the training data. This method led to the best results, as shown in Figure 7, where validation accuracy increases overall and validation loss decreases overall</p>
 
 <<img src="figure7.png" alt="Figure 7: Results with data augmentation, early stopping & fine tuning, learning_rate=0.0001, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 128" width="100%">
 <p><strong>Figure 7:</strong> Results with data augmentation, early stopping & fine tuning, learning_rate=0.0001, regularizer value 0.003, dropout values 0.4, 0.3, and batch_size = 128</p>
@@ -214,7 +211,8 @@ Data augmentation led to our best performance, allowing the model to generalize 
 
 <h4>Running on GPU</h4>
 <p>
-Another challenge was the inability to use GPU on JupyterHub. We ran the model on CPU, which made training slow. Reducing dataset size or number of epochs sped things up, but hurt performance.
+Another challenge we encountered was the inability to run our model on the GPU in JupyterHub. As a result, we had to run it on the CPU, which significantly increased the time required to obtain results and iterate on our model. We attempted two solutions: one was to reduce the number of epochs to 5, and the other was to only train the model on 12,339 images, so about 30% of the dataset. The first solution was helpful, reducing training time from 40 minutes to 15-20 minutes. 
+However, as shown in Figure 8, the second solution led to very bad results (50% accuracy), most likely due to the model outputting “Drowsy” for every image and not learning. Despite adjusting various hyperparameters, the results from using a smaller dataset continued to be very poor. We hypothesize that, because there are many images from the same person, the images we grabbed were likely several hundred images only from a handful of different people. Therefore, the model was not able to learn due to a lack of variety.
 </p>
 
 <img src="figure8.png" alt="Figure 8: Results with data augmentation, early stopping, and fine-tuning on a small dataset (~12k images)" width="100%">
