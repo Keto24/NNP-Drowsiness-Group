@@ -221,6 +221,21 @@ However, as shown in Figure 8, the second solution led to very bad results (50% 
 Eventually, we switched to <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, which allowed us to train on GPU. This reduced training time and enabled us to run data augmentation and more epochs successfully.
 </p>
 
+  <h2>Results</h2>
+
+  <p>After finding the best hyperparameters (including <strong>data augmentation</strong>, <strong>early stopping</strong>, and <strong>fine-tuning</strong>), as shown in Figure 9, we compared the two datasets. We found an interesting difference between the two datasets. The <a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">Driver Drowsiness Dataset</a> (~40k images) had better validation accuracy (~60%), while <a href="https://www.kaggle.com/datasets/banudeep/nthuddd2" target="_blank">NTHU-DDD</a> (~65k images) had lower validation loss (0.95) and a steeper decrease, as shown in Figure 10. We chose the <a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">Driver Drowsiness Dataset</a> to wrap with <a href="https://www.gradio.app/" target="_blank">Gradio</a> because the training accuracy is much higher (~98% compared to ~80%). Figure 11 displays a screenshot of the web page where a picture of a yawning individual is classified as drowsy.</p>
+
+  <img src="figure9.png" alt="Figure 9: Hyperparameters used to compare the two datasets" width="100%">
+  <p><strong>Figure 9:</strong> Hyperparameters used to compare the two datasets</p>
+
+  <img src="figure10.png" alt="Figure 10: Results with the hyperparameters shown in Figure 9. The top graph is from the Driver Drowsiness Dataset, and the bottom graph is from NTHU-DDD" width="100%">
+  <p><strong>Figure 10:</strong> Results with the hyperparameters shown in Figure 9. The top graph is from the Driver Drowsiness Dataset, and the bottom graph is from NTHU-DDD</p>
+
+  <img src="figure11.png" alt="Figure 11: Screenshot of Gradio app outputting 'Drowsiness detected'" width="100%">
+  <p><strong>Figure 11:</strong> A screenshot of the web page containing our model wrapped with Gradio. The input is a picture of a yawning individual and the output is “Drowsiness detected”</p>
+
+  <p>The model is only 50–60% accurate and performs significantly better on pictures from the dataset it was trained on compared to pictures we took and uploaded to the model</p>
+</section>
 
 
         <<h2>References</h2>
