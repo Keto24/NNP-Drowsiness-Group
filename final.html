@@ -126,13 +126,37 @@ Some current products employing drowsiness detection include Motive’s Drowsine
 </p>
 
 
-         <h3>Ethical Sweep</h3>
-        <p>
-Here we will outline our updated ethical sweep based on the results of our neural network. Some ethical considerations include the use of a camera, because using camera recordings without consent would be unethical. Another consideration is if we alert law enforcement with our app, that would result in consequences for the user, and our neural network will not always be accurate. Additionally, different repercussions could happen for different demographics.        </p>
+         <h3>Methodology</h3>
 
-        <h3>Conclusion</h3>
-        <p>Our drowsiness detection system will be highly beneficial to the world community and will save thousands of lives on the road.</p>
+<p>
+We built a driver drowsiness detection system using the CNN model. We utilized the pretrained model 
+<a href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/" target="_blank">MobileNetV2</a> as a base, 
+adding our own drowsy vs. non-drowsy classification layer on top. 
+<a href="https://www.python.org/" target="_blank">Python</a>, 
+<a href="https://jupyter.org/hub" target="_blank">JupyterHub</a>, 
+<a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, and 
+<a href="https://www.tensorflow.org/" target="_blank">Tensorflow</a> were the main tools of development. 
+Our model was trained on two datasets: 
+<a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">Driver Drowsiness Dataset</a> 
+(which had about 41,790 images) and 
+<a href="https://www.kaggle.com/datasets/banudeep/nthuddd2" target="_blank">NTHU-DDD</a> 
+(which had about 66,500 images) <a href="#ref4" class="footnote-ref">[4]</a><a href="#ref5" class="footnote-ref">[5]</a>.
+Because the latter dataset is much larger than the former, we decided to train our model on each of the datasets separately to determine which dataset would provide us with the best results. 
+Additionally, the NTHU-DDD dataset’s images are in grayscale, and we aimed to find if there was a significant effect due to this difference.
+</p>
 
+<p>
+Some of the pitfalls we encountered were drastic overfitting and lengthy run times, which we attempted to address by using the GPU rather than the CPU, and using multiple methods, including regularization, dropout layers, different batch sizes, early stopping, fine-tuning, and data augmentation. In the next section, we will outline our solutions in greater detail.
+</p>
+
+<p>
+Finally, after training the model using 
+<a href="https://colab.research.google.com/" target="_blank">Google Colab</a> with the best hyperparameters and the best dataset, 
+we wrapped the final model with 
+<a href="https://www.gradio.app/" target="_blank">Gradio</a> in 
+<a href="https://jupyter.org/hub" target="_blank">JupyterHub</a>. 
+By assigning a port number and using our terminal, we were able to get a web page running with a public link where we could upload a picture of a face, and the model would output “Drowsiness detected” or “No drowsiness.”
+</p>
          <h3>Restated Thesis</h3>
           </p>The driver drowsiness detection system will help save thousands of lives if not millions. We as a society can use AI for the benefit of our good and make our roads safer. </p>
         <h3>Future Work</h3>
