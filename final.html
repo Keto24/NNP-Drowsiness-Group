@@ -83,15 +83,20 @@ Additionally, drowsy drivers usually drastically underestimate their drowsiness,
 <p>
 To address this problem, our project focuses on training a neural network capable of detecting drowsiness in drivers. A lot of technology has already been developed targeting this issue, which provides a solid foundation for our project. However, unlike existing systems, ours will also focus on individuals with glasses, so that the drowsiness detection system can provide accurate results for those individuals. People with glasses are often neglected when it comes to facial detection systems, and we would like to address this negligence.
 </p>
-        <h3>Method</h3>
-        <p>We Utilized OpenCV, TensorFlow, and Twilio API. The datasets the neural network will be trained on is OC oC Drowsiness - Detection, MRL eye Data Set and Driver Drowsiness Dataset. etc. Here we will talk about the steps and methods we used to implement our neural network. Topic related to first point of thesis: -Statistics related to deaths caused by drowsy driving Supporting paragraphs: -Studies of drowsy driving<p>
+        <h3>Ethical Considerations</h3>
+<p>
+There were numerous ethical considerations we took into account when developing our model. First of all, we ensured that our model was trained on a diverse set of data consisting of different demographic groups: people of all races, genders, and ages.
+</p>
 
+<p>
+Secondly, we understand and prioritize the importance of users’ privacy, which is why, by using 
+<a href="https://www.gradio.app/" target="_blank">Gradio</a>, we ensured that inputted biometric data is not used or stored permanently, and any data uploaded is automatically deleted after a session.
+</p>
 
-        <ul>
-            <li>Facial feature extraction for detecting drowsiness signs.</li>
-            <li>Integration of machine learning models with real-time alerts.</li>
-            <li>Testing across diverse environments to ensure generalizability.</li>
-        </ul>
+<p>
+Although we developed our model ethically to the best of our capabilities by following the guidelines stated above, we believe our model has shortcomings, as it is very young and needs extensive time and resources to be developed in a completely ethical way. For example, using an even more diverse and extensive dataset to ensure accuracy for all types of faces. If given more time, we would train the model on additional tens of thousands of images to make it more accurate. We would also consider training our model in diverse sets of environments: day, night, cloudy, rainy, or clear weather.
+</p>
+
 
 
         <h3>Discussion</h3>
