@@ -48,7 +48,25 @@
         <h1>Driver Drowsiness Detection</h1>
         <p><strong>By Yelnur Abdushev, Emma Gandonou, Keto</strong></p>
 
-        <h2>Outline and Related Works</h2>
+        <h2>Abstract</h2>
+<p>
+Sleepiness while driving contributes to around 3–30% of global road accidents and 21% of fatal car collisions, and driving after 17–19 hours awake impairs psychomotor function to the level of 0.05% blood alcohol concentration <a href="#ref1">[1]</a><a href="#ref2">[2]</a><a href="#ref3">[3]</a>. To address this safety issue, we developed a convolutional neural network (CNN)–based system that detects driver drowsiness in real time, with a particular focus on individuals wearing eyeglasses.
+</p>
+<p>
+Our system utilizes <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a>, <a href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/" target="_blank">MobileNetV2</a>, <a href="https://www.gradio.app/" target="_blank">Gradio</a>, <a href="https://www.python.org/" target="_blank">Python</a>, <a href="https://jupyter.org/hub" target="_blank">JupyterHub</a>, and <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>. We trained our model on two datasets — <a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">Driver Drowsiness Dataset</a> and <a href="https://www.kaggle.com/datasets/banudeep/nthuddd2" target="_blank">NTHU-DDD</a> — comparing the two to determine which dataset would give better results <a href="#ref4">[4]</a><a href="#ref5">[5]</a>.
+</p>
+<p>
+Ethical considerations include avoiding storage of user input data and ensuring balanced representation across age, gender, and racial groups. Challenges we faced include overfitting and GPU limitations. Fixes we implemented include data augmentation, early stopping, regularization, and switching from <a href="https://jupyter.org/hub" target="_blank">JupyterHub</a> to <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>.
+</p>
+<p>
+Future work could focus on implementing a mobile app, accepting live video as model input, improving performance on low-quality cameras, and integrating the model with vehicle hardware. With further development, this specialized drowsiness detection system has the potential to save thousands of lives by providing alerts to drowsy drivers worldwide.
+</p>
+
+<!-- Embedded Video -->
+<div style="text-align:center; margin-top: 30px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NWWFZzCNu4s" title="Driver Drowsiness Detection Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
         <h3>Introduction</h3>
         <p>
@@ -113,37 +131,28 @@ Here we will outline our updated ethical sweep based on the results of our neura
             <a href="#ref6" class="footnote-ref">[6]</a>. The system calculates the eye aspect ratio, mouth opening ratio, and nose length ratio. The calculated values are compared to threshold values developed by the system and the difference in value leads to detection.
         </p>
 
-        <h2>References</h2>
+        <<h2>References</h2>
 
-        <p id="ref1" class="footnote">
-            [1] Albadawi, Y., Takruri, M., & Awad, M. (2022). A Review of Recent Developments in Driver Drowsiness Detection Systems. 
-            <em>Sensors</em>. <a href="https://doi.org/10.3390/s22052069" target="_blank">Read here</a>.
-        </p>
+<p id="ref1" class="footnote">
+    [1] Albadawi, Y., Takruri, M., & Awad, M. (2022). A Review of Recent Developments in Driver Drowsiness Detection Systems. <em>Sensors, 22</em>(5), 2069. <a href="https://doi.org/10.3390/s22052069" target="_blank">Read here</a>.
+</p>
 
-        <p id="ref2" class="footnote">
-            [2] Salem, D., & Waleed, M. (2024). Drowsiness detection in real-time via convolutional neural networks and transfer learning. 
-            <em>Journal of Engineering and Applied Science</em>. <a href="https://doi.org/10.1186/s44147-024-00457-z" target="_blank">Read here</a>.
+<p id="ref2" class="footnote">
+    [2] NSF. (2025). National Sleep Foundation – Drowsy Driving Facts and Statistics.
+</p>
 
-        <p id="ref3" class="footnote">
-            [3] Inkeaw, P., Srikummoon, P., Chaijaruwanich, J., et al. (2022). Automatic Driver Drowsiness Detection Using ANN Based on Visual Facial Descriptors. 
-            <em>Nature and Science of Sleep</em>. <a href="https://doi.org/10.2147/NSS.S376755" target="_blank">Read here</a>.
-        </p>
-        </p>
+<p id="ref3" class="footnote">
+    [3] Dawson, D., & Reid, K. (1997). Fatigue, alcohol and performance impairment. <em>Nature, 388</em>(6639), 235. <a href="https://doi.org/10.1038/40775" target="_blank">Read here</a>.
+</p>
 
-        <p id="ref4" class="footnote">
-            [4] Motive. Drowsiness AI battles the dangers of driver fatigue. 
-            <a href="https://gomotive.com/blog/drowsy-driver-detection/" target="_blank">Read here</a>.
-        </p>
+<p id="ref4" class="footnote">
+    [4] Nasri, I., Karrouchi, M., Snoussi, H., Kassmi, K., & Messaoudi, A. (2022). Detection and Prediction of Driver Drowsiness for the Prevention of Road Accidents Using Deep Neural Networks Techniques. In: Bennani, S., et al. <em>Advances in Intelligent Systems and Computing</em>.
+</p>
 
-        <p id="ref5" class="footnote">
-            [5] Bosch Mobility. Driver drowsiness detection. 
-            <a href="https://www.bosch-mobility.com/en/solutions/assistance-systems/driver-drowsiness-detection/" target="_blank">Read here</a>.
-        </p>
+<p id="ref5" class="footnote">
+    [5] Banudeep. (2019). NTHU DDD - Drowsy Driver Detection Dataset [Data set]. Kaggle. <a href="https://www.kaggle.com/datasets/banudeep/nthuddd2" target="_blank">Read here</a>.
+</p>
 
-        <p id="ref6" class="footnote">
-            [6] Chinthalachervu, R., et al. (2022). Driver Drowsiness Detection and Monitoring System using Machine Learning. 
-            <em>Journal of Physics: Conference Series</em>. <a href="https://doi.org/10.1088/1742-6596/2325/1/012057" target="_blank">Read here</a>.
-        </p>
     </div>
 
     <footer>
