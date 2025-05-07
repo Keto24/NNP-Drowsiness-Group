@@ -221,7 +221,7 @@ However, as shown in Figure 8, the second solution led to very bad results (50% 
 Eventually, we switched to <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, which allowed us to train on GPU. This reduced training time and enabled us to run data augmentation and more epochs successfully.
 </p>
 
-  <h2>Results</h2>
+  <h3>Results</h3>
 
   <p>After finding the best hyperparameters (including <strong>data augmentation</strong>, <strong>early stopping</strong>, and <strong>fine-tuning</strong>), as shown in Figure 9, we compared the two datasets. We found an interesting difference between the two datasets. The <a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">Driver Drowsiness Dataset</a> (~40k images) had better validation accuracy (~60%), while <a href="https://www.kaggle.com/datasets/banudeep/nthuddd2" target="_blank">NTHU-DDD</a> (~65k images) had lower validation loss (0.95) and a steeper decrease, as shown in Figure 10. We chose the <a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">Driver Drowsiness Dataset</a> to wrap with <a href="https://www.gradio.app/" target="_blank">Gradio</a> because the training accuracy is much higher (~98% compared to ~80%). Figure 11 displays a screenshot of the web page where a picture of a yawning individual is classified as drowsy.</p>
 
@@ -237,8 +237,18 @@ Eventually, we switched to <a href="https://colab.research.google.com/" target="
   <p>The model is only 50–60% accurate and performs significantly better on pictures from the dataset it was trained on compared to pictures we took and uploaded to the model</p>
 </section>
 
+<h3>Discussion</h3>
 
-        <<h2>References</h2>
+  <p>We hypothesize a few potential reasons for the difference in the results for each dataset. For the <a href="https://www.kaggle.com/datasets/banudeep/nthuddd2" target="_blank">NTHU-DDD</a> dataset, training might have been more difficult due to the images being in grayscale. Additionally, while we did not look through the whole dataset due to the immense number of images, the couple images that we printed (multiple times) were not very diverse ethnically or in terms of angle, lighting, or background, as demonstrated in Figure 12. However, this dataset might have resulted in better validation loss due to having ~15,000 more images than the <a href="https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd" target="_blank">Driver Drowsiness Dataset</a>. While having fewer images, this dataset is certainly diverse, especially in terms of face shape, lighting, background, and orientation, as shown in Figure 13. This diversity could have resulted in the better overall accuracy we achieved using this dataset.</p>
+
+  <img src="figure12.png" alt="Figure 12: Sample images from the NTHU-DDD dataset" width="100%">
+  <p><strong>Figure 12:</strong> Sample images from the NTHU-DDD dataset</p>
+
+  <img src="figure13.png" alt="Figure 13: Sample images from the Driver Drowsiness Dataset" width="100%">
+  <p><strong>Figure 13:</strong> Sample images from the Driver Drowsiness Dataset</p>
+</section>
+
+        <<h3>References</h3>
 
 <p id="ref1" class="footnote">
     [1] Albadawi, Y., Takruri, M., & Awad, M. (2022). A Review of Recent Developments in Driver Drowsiness Detection Systems. <em>Sensors, 22</em>(5), 2069. <a href="https://doi.org/10.3390/s22052069" target="_blank">Read here</a>.
